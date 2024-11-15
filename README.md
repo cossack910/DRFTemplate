@@ -10,6 +10,8 @@ my_django_project/
 ├── docker-compose.yml
 ├── requirements.txt
 └── src/
-    └── manage.py  # Djangoプロジェクトのコード（後で作成）
-
+    ├── myapp
+    ├── myproject
+    ├── tests
+    └── manage.py
 ```

@@ -5,6 +5,9 @@ up:
 up-detached:
 	docker compose up -d
 
+build:
+	docker compose build
+
 up-build:
 	docker compose up --build
 
@@ -20,3 +23,7 @@ app:
 # Djangoプロジェクトの作成
 project:
 	docker compose run web django-admin startproject $(name)
+
+# test
+test:
+	docker compose run web tox -e py311 -- tests/

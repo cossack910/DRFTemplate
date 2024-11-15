@@ -12,5 +12,6 @@ my_django_project/
 └── src/
     ├── myapp
     ├── myproject
+    ├── tests
     └── manage.py
 ```

@@ -26,4 +26,4 @@ project:
 
 # test
 test:
-	docker compose run web tox -e py311 -- tests/
+	docker compose run web tox -- tests/

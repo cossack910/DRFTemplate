@@ -1,15 +1,15 @@
 # Docker Compose commands
 up:
-	docker compose up
+	docker compose -p $(name) up
 
 up-detached:
-	docker compose up -d
+	docker compose -p $(name) up -d
 
 build:
 	docker compose build
 
 up-build:
-	docker compose up --build
+	docker compose -p $(name) up --build
 
 down:
 	docker compose down

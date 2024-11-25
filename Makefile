@@ -29,6 +29,5 @@ migrate:
 	docker compose run web python manage.py makemigrations $(name)
 
 # test
-
 test:
 	docker compose run web tox -- tests/

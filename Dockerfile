@@ -1,5 +1,6 @@
-# ベースイメージとしてPython 3.11のスリム版を使用
-FROM python:3.11-slim
+# Debian 12（bookworm）で固定
+FROM python:3.12-slim-bookworm
+
 
 # 作業ディレクトリの設定
 WORKDIR /app
@@ -7,16 +8,17 @@ WORKDIR /app
 # システムパッケージのインストール（MySQLクライアントに必要なライブラリも含む）
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-    libmariadb-dev-compat \
-    libmariadb-dev \
     build-essential \
     gcc \
+    libmariadb-dev \
+    libmariadb-dev-compat \
     pkg-config \
-    && rm -rf /var/lib/apt/lists/*
+    && apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 # 必要なPythonパッケージのインストール
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+COPY requirements.txt /app/requirements.txt
+RUN pip install --no-cache-dir -r /app/requirements.txt
 
 # プロジェクトファイルのコピー
 COPY ./src /app

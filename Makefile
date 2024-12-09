@@ -30,4 +30,4 @@ migrate:
 
 # test
 test:
-	docker compose run web tox -- tests/
+	docker compose run --rm web tox -- tests/

@@ -45,3 +45,17 @@ make down
 ```
 make migrate
 ```
+
+## 環境変数一覧
+
+| 環境変数               | 説明                   |
+| ---------------------- | ---------------------- |
+| SECRET_KEY             |                        |
+| DATABASE_URL           |                        |
+| DATABASE_ENGINE        |                        |
+| DATABASE_NAME          |                        |
+| DATABASE_USER          |                        |
+| DATABASE_PASSWORD      |                        |
+| DATABASE_ROOT_PASSWORD |                        |
+| DATABASE_HOST          | データベースのホスト　 |
+| DATABASE_PORT          | データベースのポート   |
